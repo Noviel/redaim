@@ -1,0 +1,46 @@
+{
+  "name": "redaim",
+  "version": "1.0.0",
+  "description": "Redaim - reusable actions and reducers for redux. Aim domain's target.",
+  "main": "dist/index.js",
+  "author": "Aleksandr Snov <snov.contact@gmail.com>",
+  "license": "MIT",
+  "npmName": "redaim",
+  "npmFileMap": [
+    {
+      "basePath": "/dist/",
+      "files": [
+        "*.js"
+      ]
+    }
+  ],
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src",
+    "build": "babel src --out-dir dist --ignore src/__tests__",
+    "example": "npm run build && node dist/example/index.js",
+    "example:counter": "npm run build && node dist/example/counter/index.js",
+    "major-release": "npm --no-git-tag-version version major && npm publish",
+    "minor-release": "npm --no-git-tag-version version minor && npm publish",
+    "patch-release": "npm --no-git-tag-version version patch && npm publish",
+    "prepublishOnly": "npm run lint && npm run test && npm run build"
+  },
+  "jest": {
+    "rootDir": "",
+    "testRegex": "(src).*(/__tests__/.*|(\\.|/)(test|spec))\\.jsx?$"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "7.2.3",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "3.19.0",
+    "eslint-config-react-app": "^1.0.4",
+    "eslint-plugin-flowtype": "2.33.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "5.0.1",
+    "eslint-plugin-react": "7.0.1",
+    "jest": "^20.0.4"
+  }
+}

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createReducerWithHandlers should invoke correct handler with custom keySelector 1`] = `"one"`;
+
+exports[`createReducerWithHandlers should not modify the state if key is not found in handlers 1`] = `"initalState"`;
+
+exports[`createReducerWithHandlers should properly take a key from an action with default keySelector 1`] = `"two"`;
+
+exports[`createReducerWithHandlers should return unmodified state if empty handlers 1`] = `"initalState"`;
+
+exports[`createReducerWithHandlers should return unmodified state if handlers is not an object 1`] = `"initalState"`;
+
+exports[`execSelector should properly select a key 1`] = `"EXEC_VALUE"`;
+
+exports[`execSelector should return specific error string if key is not found in the action's meta 1`] = `"@@REDAIM-ACTION/UNKNOWN"`;
+
+exports[`execSelector should return specific error string if meta is not found in an action 1`] = `"@@REDAIM-ACTION/UNKNOWN"`;
+
+exports[`extractValues should extract properties from an object 1`] = `
+Object {
+  "obj1": "from obj1",
+  "obj3": "from obj3",
+}
+`;
+
+exports[`extractValues should properly extract fields from an array 1`] = `
+Object {
+  "0": 1,
+  "1": "second",
+}
+`;
+
+exports[`extractValues should properly extract fields from an array with empty objects 1`] = `
+Object {
+  "1": 1,
+  "2": "second",
+}
+`;
+
+exports[`extractValues should return an empty object if property is not exist 1`] = `Object {}`;

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create actions examples should create actions from action object with functions as keys 1`] = `
+Object {
+  "add": Object {
+    "meta": Object {
+      "exec": "ADD",
+      "target": "counter1",
+    },
+    "payload": Object {
+      "value": 100,
+    },
+    "type": "COUNTER_TRIGGER",
+  },
+  "sub": Object {
+    "meta": Object {
+      "exec": "SUB",
+      "target": "counter1",
+    },
+    "payload": Object {
+      "value": 10,
+    },
+    "type": "COUNTER_TRIGGER",
+  },
+}
+`;
+
+exports[`create actions examples should return correct action 1`] = `
+Object {
+  "meta": Object {
+    "additionalMetaField": 42,
+    "exec": "ADD",
+    "target": "counter1",
+  },
+  "payload": Object {
+    "value": 100,
+  },
+  "type": "COUNTERS_TRIGGER",
+}
+`;

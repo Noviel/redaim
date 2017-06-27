@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createTarget should return correct object with default properties 1`] = `
+Object {
+  "initialState": true,
+  "reducer": true,
+}
+`;
+
+exports[`createTarget should set initialState 1`] = `
+Object {
+  "value": "initialValue",
+}
+`;
+
+exports[`createTarget should set reducer 1`] = `
+Object {
+  "state": 101,
+}
+`;

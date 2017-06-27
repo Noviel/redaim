@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createNamespace should apply actions to correct target 1`] = `
+Array [
+  10,
+  -105,
+]
+`;
+
+exports[`createNamespace should not modify state if target is not in namespace 1`] = `
+Array [
+  5,
+  -100,
+]
+`;
+
+exports[`createNamespace should not modify state with not corresponding action type 1`] = `
+Array [
+  5,
+  -100,
+]
+`;
+
+exports[`createNamespace should return a function 1`] = `"function"`;
+
+exports[`createNamespaceObject should return object with namespace as a key 1`] = `
+Array [
+  "TRIGGER",
+]
+`;
