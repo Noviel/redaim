@@ -3,7 +3,6 @@ import {
   createActionR,
   
   wrapActions,
-  wrapActionsR,
   
   createActions,
   createActionsR,
@@ -439,7 +438,7 @@ describe('bindActionsR', () => {
       exec1: exec1().type,
       exec2: exec2().type,
       exec3: exec3().type,
-    }
+    };
 
     expect(result).toMatchSnapshot();
   });

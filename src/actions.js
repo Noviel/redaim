@@ -71,7 +71,7 @@ export const bindActionsR = actions => {
 
     return target => wrappedActions(actionWithTrigger(target));
   };
-}
+};
 
 export const createActions = trigger => {
   const boundToTrigger = bindActions(createAction(trigger));

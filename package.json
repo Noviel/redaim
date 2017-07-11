@@ -1,6 +1,6 @@
 {
   "name": "redaim",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Redaim - reusable actions and reducers for redux. Aim domain's target.",
   "main": "dist/index.js",
   "author": "Aleksandr Snov <snov.contact@gmail.com>",
