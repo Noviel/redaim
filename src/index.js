@@ -2,7 +2,19 @@ import createNamespace from './namespace';
 
 export { createNamespaceObject } from './namespace';
 
-export { createAction, createActions, createActionReversed, bindActinos, wrapActions } from './actions';
+export { 
+  createAction, 
+  createActionR,
+
+  createActions,
+  createActionsR, 
+
+  bindActinos,
+  bindActionsR, 
+  
+  wrapActions,
+  wrapActionsR
+} from './actions';
 
 export { default as createTarget } from './target';
 
