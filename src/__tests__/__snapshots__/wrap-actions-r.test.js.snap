@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`wrapActionsR should correctly apply function with multiple arguments to each action 1`] = `
+Object {
+  "wrappedActionOne": Object {
+    "payload": Object {
+      "one": 1,
+      "two": "two",
+    },
+    "type": "ACTION_ONE",
+  },
+  "wrappedActionTwo": Object {
+    "payload": Object {
+      "one": Object {
+        "value": Object {
+          "inner": Object {
+            "innerValue": 100,
+          },
+        },
+      },
+      "two": null,
+    },
+    "type": "ACTION_TWO",
+  },
+}
+`;
+
+exports[`wrapActionsR should correctly apply function with one argument to each action 1`] = `
+Object {
+  "wrappedActionOne": Object {
+    "payload": 10,
+    "type": "ACTION_ONE",
+  },
+  "wrappedActionTwo": Object {
+    "payload": Object {
+      "value": Object {
+        "inner": Object {
+          "innerValue": 100,
+        },
+      },
+    },
+    "type": "ACTION_TWO",
+  },
+}
+`;
+
+exports[`wrapActionsR should correctly apply function without arguments to each action 1`] = `
+Object {
+  "wrappedActionOne": Object {
+    "payload": 42,
+    "type": "ACTION_ONE",
+  },
+  "wrappedActionTwo": Object {
+    "payload": 42,
+    "type": "ACTION_TWO",
+  },
+}
+`;
+
+exports[`wrapActionsR should return object with functions 1`] = `
+Object {
+  "ACTION_ONE": "function",
+  "ACTION_TWO": "function",
+}
+`;
+
+exports[`wrapActionsR should return object with same keys as an input action 1`] = `
+Array [
+  "ACTION_ONE",
+  "ACTION_TWO",
+]
+`;

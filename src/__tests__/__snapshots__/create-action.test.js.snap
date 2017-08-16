@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createAction should correctly merge action's properties 1`] = `
+Object {
+  "meta": Object {
+    "exec": "EXEC_TYPE",
+    "obj": Object {
+      "inner": 10,
+    },
+    "target": "target",
+    "value": 100,
+  },
+  "payload": Object {
+    "data": 10,
+  },
+  "type": "ACTION_TRIGGER",
+}
+`;
+
+exports[`createAction should correctly merge custom action's properties 1`] = `
+Object {
+  "actionOne": Object {
+    "customProp": Object {
+      "value": 42,
+    },
+    "meta": Object {
+      "exec": "MY_EXEC",
+      "target": "MY_TARGET",
+    },
+    "payload": null,
+    "type": "MY_TRIGGER",
+  },
+  "actionTwo": Object {
+    "customProp": Object {
+      "value": 42,
+    },
+    "meta": Object {
+      "exec": "MY_EXEC",
+      "target": "MY_TARGET",
+      "val": "meta-val",
+    },
+    "payload": Object {
+      "data": "payload-data",
+    },
+    "type": "MY_TRIGGER",
+  },
+}
+`;
+
+exports[`createAction should override action's target 1`] = `"OK_TARGET"`;
+
+exports[`createAction should override action's type 1`] = `"OK"`;
+
+exports[`createAction should return function when called once 1`] = `"function"`;
+
+exports[`createAction should return function when called twice 1`] = `"function"`;
+
+exports[`createAction should return object when called thrice 1`] = `"object"`;
+
+exports[`createAction should set action's meta.target 1`] = `"OK_TARGET"`;
+
+exports[`createAction should set action's type 1`] = `"OK_TYPE"`;
+
+exports[`createAction should set exec to default value if not specified 1`] = `"@@REDAIM-ACTION-UNKNOWN"`;
+
+exports[`createAction should set target to default value if not specified 1`] = `"@@REDAIM-TARGET-UNKNOWN"`;
+
+exports[`createAction should set trigger to default value if not specified 1`] = `"@@REDAIM-TRIGGER-UNKNOWN"`;
+
+exports[`createAction should use exec from root 1`] = `"EXEC_FROM_ROOT"`;

@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`aimFromAction should create default aim if no action provided 1`] = `
+Object {
+  "meta": Object {
+    "exec": "@@REDAIM-ACTION-UNKNOWN",
+    "target": "@@REDAIM-TARGET-UNKNOWN",
+  },
+  "payload": null,
+  "type": "@@REDAIM-TRIGGER-UNKNOWN",
+}
+`;
+
+exports[`aimFromAction should merge existing meta fields 1`] = `
+Object {
+  "meta": Object {
+    "exec": "EXEC",
+    "field1": 100,
+    "field2": Object {
+      "complex": 200,
+    },
+    "target": "TARGET",
+  },
+  "payload": null,
+  "type": "TRIGGER",
+}
+`;
+
+exports[`aimFromAction should merge existing meta fields not overriding exec and target from type 1`] = `
+Object {
+  "meta": Object {
+    "exec": "EXEC",
+    "other": "OK",
+    "target": "TARGET",
+  },
+  "payload": null,
+  "type": "TRIGGER",
+}
+`;
+
+exports[`aimFromAction should merge other fields 1`] = `
+Object {
+  "meta": Object {
+    "exec": "EXEC",
+    "target": "TARGET",
+  },
+  "otherField": Object {
+    "data": 100,
+  },
+  "payload": null,
+  "type": "TRIGGER",
+}
+`;
+
+exports[`aimFromAction should merge payload 1`] = `
+Object {
+  "meta": Object {
+    "exec": "EXEC",
+    "target": "TARGET",
+  },
+  "payload": Object {
+    "field1": 100,
+    "field2": Object {
+      "complex": 200,
+    },
+  },
+  "type": "TRIGGER",
+}
+`;
+
+exports[`aimFromAction should translate action type with '/' to trigger and target 1`] = `
+Object {
+  "meta": Object {
+    "exec": "@@REDAIM-ACTION-UNKNOWN",
+    "target": "TARGET",
+  },
+  "payload": null,
+  "type": "TRIGGER",
+}
+`;
+
+exports[`aimFromAction should translate action type with two '/'s to trigger, target and exec 1`] = `
+Object {
+  "meta": Object {
+    "exec": "EXEC",
+    "target": "TARGET",
+  },
+  "payload": null,
+  "type": "TRIGGER",
+}
+`;
+
+exports[`aimFromAction should translate simple action type to trigger 1`] = `
+Object {
+  "meta": Object {
+    "exec": "@@REDAIM-ACTION-UNKNOWN",
+    "target": "@@REDAIM-TARGET-UNKNOWN",
+  },
+  "payload": null,
+  "type": "SIMPLE",
+}
+`;

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bindActions should bind target to actions 1`] = `
+Object {
+  "exec1": "MY_TARGET",
+  "exec2": "MY_TARGET",
+  "exec3": "MY_TARGET",
+}
+`;
+
+exports[`bindActions should bind trigger to actions 1`] = `
+Object {
+  "exec1": "MY_TRIGGER",
+  "exec2": "MY_TRIGGER",
+  "exec3": "MY_TRIGGER",
+}
+`;
+
+exports[`bindActionsR should bind target to actions 1`] = `
+Object {
+  "exec1": "special_target",
+  "exec2": "special_target",
+  "exec3": "special_target",
+}
+`;
+
+exports[`bindActionsR should bind trigger to actions 1`] = `
+Object {
+  "exec1": "TRIGGER",
+  "exec2": "TRIGGER",
+  "exec3": "TRIGGER",
+}
+`;

@@ -8,5 +8,5 @@ export default combine({
     }
     return state;
   },
-  counters
+  ...counters
 });

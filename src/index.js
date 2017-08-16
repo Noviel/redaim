@@ -1,8 +1,8 @@
 import createNamespace from './namespace';
 
-export { createNamespaceObject } from './namespace';
+export {
+  aimFromAction,
 
-export { 
   createAction, 
   createActionR,
 
@@ -17,5 +17,6 @@ export {
 } from './actions';
 
 export { default as createTarget } from './target';
+export { createNamespaceObject } from './namespace';
 
 export default createNamespace;

@@ -1,4 +1,4 @@
-import { createActions } from '../../index';
+import { createActionsR } from '../../index';
 
 const actionsObject = {
   increment: { exec: 'INCREMENT' },
@@ -9,8 +9,8 @@ const actionsObject = {
 
 // we can hard bind to `COUNTERS` namespace if we are sure 
 // that it is the only place where actions will be used
-const countersActions = createActions('COUNTERS');
+const countersActions = createActionsR(actionsObject);
 
 export default function getActions(target) {
-  return countersActions(target)(actionsObject);
+  return countersActions('COUNTERS')(target);
 }

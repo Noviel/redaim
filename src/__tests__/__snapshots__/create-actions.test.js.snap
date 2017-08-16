@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createActions should create actions from object with functions as values 1`] = `
+Object {
+  "exec1": Object {
+    "meta": Object {
+      "exec": "EXEC1",
+      "target": "target",
+    },
+    "payload": Object {
+      "value": 100,
+    },
+    "type": "TRIGGER",
+  },
+  "exec2": Object {
+    "meta": Object {
+      "exec": "EXEC2",
+      "target": "target",
+    },
+    "payload": Object {
+      "value1": Object {
+        "value": "value",
+      },
+      "value2": 420,
+    },
+    "type": "TRIGGER",
+  },
+}
+`;
+
+exports[`createActions should create actions from object with mixed values 1`] = `
+Object {
+  "exec1": Object {
+    "meta": Object {
+      "exec": "EXEC1",
+      "target": "target",
+    },
+    "payload": Object {
+      "value": "exec1-value",
+    },
+    "type": "TRIGGER",
+  },
+  "exec2": Object {
+    "meta": Object {
+      "exec": "EXEC2",
+      "target": "target",
+    },
+    "payload": "payload",
+    "type": "TRIGGER",
+  },
+}
+`;
+
+exports[`createActions should create actions from object with objects as values 1`] = `
+Object {
+  "exec1": Object {
+    "meta": Object {
+      "exec": "EXEC1",
+      "target": "target",
+    },
+    "payload": Object {
+      "value": 1,
+    },
+    "type": "TRIGGER",
+  },
+  "exec2": Object {
+    "meta": Object {
+      "exec": "EXEC2",
+      "target": "target",
+    },
+    "payload": Object {
+      "value": 2,
+    },
+    "type": "TRIGGER",
+  },
+  "exec3": Object {
+    "meta": Object {
+      "exec": "EXEC3",
+      "target": "target",
+    },
+    "payload": Object {
+      "value": 3,
+    },
+    "type": "TRIGGER",
+  },
+}
+`;
+
+exports[`createActionsR should create actions from object with functions as values 1`] = `
+Object {
+  "exec1": Object {
+    "meta": Object {
+      "exec": "EXEC1",
+      "target": "target",
+    },
+    "payload": Object {
+      "value": 100,
+    },
+    "type": "TRIGGER",
+  },
+  "exec2": Object {
+    "meta": Object {
+      "exec": "EXEC2",
+      "target": "target",
+    },
+    "payload": Object {
+      "value1": Object {
+        "value": "value",
+      },
+      "value2": 420,
+    },
+    "type": "TRIGGER",
+  },
+}
+`;
+
+exports[`createActionsR should create actions from object with mixed values 1`] = `
+Object {
+  "exec1": Object {
+    "meta": Object {
+      "exec": "EXEC1",
+      "target": "target",
+    },
+    "payload": Object {
+      "value": "exec1-value",
+    },
+    "type": "TRIGGER",
+  },
+  "exec2": Object {
+    "meta": Object {
+      "exec": "EXEC2",
+      "target": "target",
+    },
+    "payload": "payload",
+    "type": "TRIGGER",
+  },
+}
+`;
+
+exports[`createActionsR should create actions from object with object as values 1`] = `
+Object {
+  "exec1": Object {
+    "meta": Object {
+      "exec": "EXEC1",
+      "target": "target",
+    },
+    "payload": Object {
+      "value": 1,
+    },
+    "type": "TRIGGER",
+  },
+  "exec2": Object {
+    "meta": Object {
+      "exec": "EXEC2",
+      "target": "target",
+    },
+    "payload": Object {
+      "value": 2,
+    },
+    "type": "TRIGGER",
+  },
+  "exec3": Object {
+    "meta": Object {
+      "exec": "EXEC3",
+      "target": "target",
+    },
+    "payload": Object {
+      "value": 3,
+    },
+    "type": "TRIGGER",
+  },
+}
+`;

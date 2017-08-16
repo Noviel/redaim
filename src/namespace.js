@@ -7,7 +7,7 @@ const createReducer = (targetReducers = {}) => (state, action) => {
   const target = targetSelector(action);
 
   // if there is no target, it means something went wrong, because we can
-  // find ourself here only with proper action filtered by namespace reducer
+  // find ourself here only with proper action which filtered by namespace reducer
   if (!targetReducers.hasOwnProperty(target)) {
     if (isDev) {
       console.error(`Unknown target ${target} for action ${JSON.stringify(action)}`);

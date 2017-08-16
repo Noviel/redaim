@@ -3,30 +3,34 @@ import { TRIGGER_UNKNOWN, TARGET_UNKNOWN, EXEC_UNKNOWN } from './constants';
 export const createAction = 
   (trigger = TRIGGER_UNKNOWN) => 
   (target = TARGET_UNKNOWN) => 
-  (action = {}) => {
-  
-  const { exec = EXEC_UNKNOWN, payload = null, meta = {}, ...rest } = action;
+  ({ exec = EXEC_UNKNOWN, payload = null, meta, ...rest } = {}) => 
+({
+  ...rest,
+  type: trigger,
+  payload,
+  meta: {
+    ...meta,
+    target: target,
+    exec
+  }
+});
 
-  return { 
-    type: trigger, 
-    meta: { target, exec, ...meta },
-    payload,
-    ...rest
-  };
-};
-
-export const createActionR =
-  (action = {}) =>
-  (trigger = TRIGGER_UNKNOWN) =>
-  (target = TARGET_UNKNOWN) => {
-  
-  const { exec = EXEC_UNKNOWN, payload = null, meta = {}, ...rest } = action;
+export const aimFromAction = ({ type = '', payload = null, meta, ...rest } = {}) => {
+  const [ 
+    trigger = TRIGGER_UNKNOWN, 
+    target = TARGET_UNKNOWN, 
+    exec = EXEC_UNKNOWN 
+  ] = type.split('/');
 
   return {
-    type: trigger,
-    meta: { target, exec, ...meta },
+    ...rest,
+    type: trigger || TRIGGER_UNKNOWN,
     payload,
-    ...rest
+    meta: {
+      ...meta,
+      target: target || TARGET_UNKNOWN,
+      exec: exec || EXEC_UNKNOWN
+    }
   };
 };
 
@@ -45,6 +49,36 @@ export const wrapActions = fn => actions => {
   return finalActions;
 };
 
+export const bindActions = actionCreatorWithTrigger => target => actions =>
+  wrapActions(actionCreatorWithTrigger(target))(actions);
+  
+export const createActions = trigger => {
+  const boundToTrigger = bindActions(createAction(trigger));
+
+  return target => { 
+    const boundToTarget = boundToTrigger(target);
+
+    return actions => boundToTarget(actions);
+  };
+};
+
+// reversed order of arguments
+  
+export const createActionR =
+  ({ exec = EXEC_UNKNOWN, payload, meta, ...rest } = {}) =>
+  (trigger = TRIGGER_UNKNOWN) =>
+  (target = TARGET_UNKNOWN) =>
+({
+  ...rest,
+  type: trigger,
+  payload,
+  meta: {
+    ...meta,
+    target: target,
+    exec
+  }
+});
+
 export const wrapActionsR = actions => fn => {
   const finalActions = {};
   
@@ -60,26 +94,13 @@ export const wrapActionsR = actions => fn => {
   return finalActions;
 };
 
-export const bindActions = actionCreatorWithTrigger => target => actions =>
-  wrapActions(actionCreatorWithTrigger(target))(actions);
-
 export const bindActionsR = actions => {
   const wrappedActions = wrapActionsR(actions);
 
   return trigger => { 
-    const actionWithTrigger = createAction(trigger);
+    const actionAimer = createAction(trigger);
 
-    return target => wrappedActions(actionWithTrigger(target));
-  };
-};
-
-export const createActions = trigger => {
-  const boundToTrigger = bindActions(createAction(trigger));
-
-  return target => { 
-    const boundToTarget = boundToTrigger(target);
-
-    return actions => boundToTarget(actions);
+    return target => wrappedActions(actionAimer(target));
   };
 };
 
